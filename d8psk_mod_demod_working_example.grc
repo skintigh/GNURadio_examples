@@ -1,16 +1,16 @@
 options:
   parameters:
-    author: pentoo
+    author: Seth Kintigh
     category: '[GRC Hier Blocks]'
     cmake_opt: ''
     comment: ''
     copyright: ''
-    description: ''
+    description: 8DPSK example mod/demod
     gen_cmake: 'On'
     gen_linking: dynamic
     generate_options: qt_gui
     hier_block_src_path: '.:'
-    id: d8psk_transmitter
+    id: D8PSK_8DPSK_example
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -21,7 +21,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Not titled yet
+    title: 8DPSK mod/demod example
     window_size: ''
   states:
     bus_sink: false
@@ -674,9 +674,9 @@ blocks:
     entags: 'True'
     grid: 'False'
     gui_hint: ''
-    label1: Signal 1
+    label1: Magnitude
     label10: Signal 10
-    label2: Signal 2
+    label2: Phase
     label3: Signal 3
     label4: Signal 4
     label5: Signal 5
