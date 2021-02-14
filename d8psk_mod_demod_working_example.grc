@@ -218,7 +218,7 @@ blocks:
     bus_structure: null
     coordinate: [16, 308.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: blocks_char_to_float_0
   id: blocks_char_to_float
   parameters:
@@ -342,7 +342,7 @@ blocks:
     bus_structure: null
     coordinate: [16, 220.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: digital_constellation_decoder_cb_0
   id: digital_constellation_decoder_cb
   parameters:

@@ -326,7 +326,7 @@ blocks:
     bus_structure: null
     coordinate: [0, 340.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_char_to_float_0
   id: blocks_char_to_float
   parameters:
@@ -450,7 +450,7 @@ blocks:
     bus_structure: null
     coordinate: [0, 252.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: channels_channel_model_0
   id: channels_channel_model
   parameters:
