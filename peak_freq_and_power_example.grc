@@ -47,8 +47,11 @@ blocks:
 - name: freq
   id: variable_qtgui_range
   parameters:
-    comment: "Set the Tx frequency at \nrun time with a knob.\nModify to allow freqs\n\
-      above the Nyquist rate\nand see what happens."
+    comment: 'Set the Tx frequency at run time with a knob.
+
+      Modify to allow freqs above the Nyquist rate
+
+      and see what happens.'
     gui_hint: 0,0,
     label: Tx Freq
     min_len: '100'
@@ -63,13 +66,13 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [8, 508.0]
+    coordinate: [360, 532.0]
     rotation: 0
     state: enabled
 - name: nyquist_rate
   id: variable
   parameters:
-    comment: "max freq allowed \nby our sample rate"
+    comment: "max freq possible \nat our sample rate"
     value: samp_rate/2
   states:
     bus_sink: false
@@ -96,7 +99,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [168, 516.0]
+    coordinate: [232, 532.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -119,7 +122,7 @@ blocks:
     affinity: ''
     alias: ''
     amp: '1'
-    comment: "Background noise.\nI turned the block \naround to make \nmore room."
+    comment: "Background noise.\n(I rotated the block \naround to make \nmore room.)"
     maxoutbuf: '0'
     minoutbuf: '0'
     noise_type: analog.GR_GAUSSIAN
@@ -138,7 +141,7 @@ blocks:
     affinity: ''
     alias: ''
     amp: power
-    comment: Our "transmitter"
+    comment: Our "transmitter" (Tx)
     freq: freq
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -151,7 +154,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 364.0]
+    coordinate: [64, 412.0]
     rotation: 180
     state: enabled
 - name: blocks_add_const_vxx_0
@@ -169,7 +172,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1256, 76.0]
+    coordinate: [1192, 76.0]
     rotation: 0
     state: true
 - name: blocks_add_xx_0
@@ -177,7 +180,8 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    comment: "add signal \nto noise"
+    comment: "Add signal and noise. \nIn the real world, a \ntransmitted signal will\
+      \ \nseveral types of noise\nand distortion."
     maxoutbuf: '0'
     minoutbuf: '0'
     num_inputs: '2'
@@ -206,7 +210,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [808, 216.0]
+    coordinate: [808, 192.0]
     rotation: 0
     state: true
 - name: blocks_complex_to_mag_squared_0
@@ -214,9 +218,8 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    comment: 'Injests a vector of complex values
-
-      Outputs a vector of floats'
+    comment: "Injests a vector of complex \nvalues, outputs a vector \nmagnitudes\
+      \ squared \nas floats"
     maxoutbuf: '0'
     minoutbuf: '0'
     vlen: bin_size
@@ -224,7 +227,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [600, 228.0]
+    coordinate: [600, 204.0]
     rotation: 0
     state: true
 - name: blocks_max_xx_0
@@ -245,7 +248,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [720, 404.0]
+    coordinate: [688, 348.0]
     rotation: 0
     state: true
 - name: blocks_multiply_const_xx_0
@@ -254,7 +257,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: adjust power output from FFT
-    const: 1/bin_size/bin_size
+    const: 1/bin_size**2
     maxoutbuf: '0'
     minoutbuf: '0'
     type: float
@@ -263,7 +266,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [928, 412.0]
+    coordinate: [896, 356.0]
     rotation: 0
     state: true
 - name: blocks_multiply_const_xx_0_0
@@ -281,7 +284,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1216, 412.0]
+    coordinate: [1184, 356.0]
     rotation: 0
     state: true
 - name: blocks_multiply_const_xx_0_1
@@ -301,7 +304,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1072, 76.0]
+    coordinate: [1008, 76.0]
     rotation: 0
     state: true
 - name: blocks_nlog10_ff_0
@@ -319,7 +322,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1112, 412.0]
+    coordinate: [1080, 356.0]
     rotation: 0
     state: true
 - name: blocks_null_sink_0
@@ -328,7 +331,7 @@ blocks:
     affinity: ''
     alias: ''
     bus_structure_sink: '[[0,],]'
-    comment: "Null sinks eat unwanted output. \nSome outputs must be used by a block\
+    comment: "Null sinks eat unwanted output. \nSome outputs must be used by \na block\
       \ or you get an error."
     num_inputs: '1'
     type: short
@@ -337,7 +340,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1024, 248.0]
+    coordinate: [1024, 224.0]
     rotation: 0
     state: true
 - name: blocks_short_to_float_0
@@ -354,7 +357,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [920, 76.0]
+    coordinate: [856, 76.0]
     rotation: 0
     state: true
 - name: blocks_stream_to_vector_0
@@ -362,8 +365,8 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    comment: "Emits vectors 1024 long \nat 1/1024th the sample rate.\nSo sample rate\
-      \ is different\nfrom here on."
+    comment: "Emits vectors 1024 long \nat 1/1024th the sample rate.\nSo the actual\
+      \ sample rate is \ndifferent from samp_rate now."
     maxoutbuf: '0'
     minoutbuf: '0'
     num_items: bin_size
@@ -373,7 +376,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [200, 232.0]
+    coordinate: [200, 208.0]
     rotation: 0
     state: true
 - name: fft_vxx_0
@@ -381,7 +384,9 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    comment: ''
+    comment: "Converts from Time Domain to \nFrequency Domain.\nFinds the signal strenth\
+      \ at freqs\ncorresponding to each of 1024_bins.\nPretend this is the receiver\
+      \ (Rx)."
     fft_size: bin_size
     forward: 'True'
     maxoutbuf: '0'
@@ -394,59 +399,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [368, 196.0]
-    rotation: 0
-    state: true
-- name: note_0_0_0
-  id: note
-  parameters:
-    alias: ''
-    comment: ''
-    note: Turns Data into Vectors
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [200, 180.0]
-    rotation: 0
-    state: true
-- name: note_0_0_0_0
-  id: note
-  parameters:
-    alias: ''
-    comment: ''
-    note: Time Domain into Frequency Domain
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [368, 140.0]
-    rotation: 0
-    state: true
-- name: note_0_0_0_0_0
-  id: note
-  parameters:
-    alias: ''
-    comment: ''
-    note: Complex to Magnitude^2
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [584, 180.0]
-    rotation: 0
-    state: true
-- name: note_0_0_0_0_0_1
-  id: note
-  parameters:
-    alias: ''
-    comment: ''
-    note: Finds Max of Bin
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [792, 164.0]
+    coordinate: [368, 172.0]
     rotation: 0
     state: true
 - name: qtgui_number_sink_0
@@ -509,7 +462,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1400, 388.0]
+    coordinate: [1368, 332.0]
     rotation: 0
     state: true
 - name: qtgui_number_sink_0_0
@@ -574,7 +527,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1400, 52.0]
+    coordinate: [1344, 52.0]
     rotation: 0
     state: true
 - name: qtgui_sink_x_0
@@ -583,7 +536,7 @@ blocks:
     affinity: ''
     alias: ''
     bw: samp_rate
-    comment: 'Multiple displays of a signal.
+    comment: 'Multiple displays of the Tx signal.
 
       When running, select the waterfall
 
@@ -607,7 +560,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [496, 508.0]
+    coordinate: [1272, 556.0]
     rotation: 0
     state: true
 
